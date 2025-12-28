@@ -17,7 +17,7 @@ class Config{
             die("Connection failed: " . $e->getMessage());
         }
     }
-    function getPdo(){
+    public function getPdo(){
         return $this->pdo;
     }
 
