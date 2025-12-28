@@ -3,6 +3,7 @@
 require_once "patient.php";
 require_once "department.php";
 require_once "validation.php";
+require_once "statistic.php";
 
 
 class Menu
@@ -276,12 +277,27 @@ class Menu
         echo "2. Average years of service of doctors\n";
         echo "3. Most popular Department\n";
         echo "4. Back\n";
+
+        $s = new Statistic();
+
         $numberS = (int) readline("Enter a number: \n");
-        if ($numberS == 5) {
-            $this->menu();
-        } else {
-            echo "write one of this numbers 1,2,3,4,5\n\n";
-            $this->Patient();
+        switch ($numberS) {
+            case 1:
+                echo $s->getAverageAge();
+                break;
+            case 2:
+                # code...
+                break;
+            case 3:
+                # code...
+                break;
+            case 4:
+                $this->menu();
+                break;        
+            default:
+                echo "write one of this numbers 1,2,3,4,5\n\n";
+                $this->Statistic();
+                break;
         }
     }
 }
