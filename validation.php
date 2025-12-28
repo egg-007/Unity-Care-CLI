@@ -18,6 +18,19 @@ class Validation {
             return false;
         }
     }
+    public function getValideAddress($Address){
+        $Address = trim($Address);
+
+        if (empty($Address)) {
+            return false;
+        }
+        if(preg_match("/^[a-zA-Z0-9 ]+$/", $Address)){
+            return $Address;
+        }else{
+            echo"invalide name";
+            return false;
+        }
+    }
     public function getValideEmail($email){
         $email = trim($email);
 
